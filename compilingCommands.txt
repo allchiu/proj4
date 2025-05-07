@@ -1,0 +1,9 @@
+- Open Command prompt terminal in vscode.
+- Run & "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat" -arch=x64
+- Run cl /c main.c proj4.c
+- Run set CUDA_PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\lib\x64
+- Run set INCLUDE=%CUDA_PATH%\include;%INCLUDE%
+- Run set LIB=%CUDA_PATH%\lib\x64;%LIB%
+- Run nvcc -arch=sm_50 -c proj4_cuda.cu -o proj4_cuda.obj
+- Run link main.obj proj4.obj proj4_cuda.obj /OUT:proj4.exe /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\lib\x64" cudart.lib
+- Run proj4.exe in1.txt outputFile1.txt 10 1
